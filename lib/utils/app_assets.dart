@@ -15,7 +15,8 @@ class AppAssets {
   static const String introImage4 = 'assets/images/intro_image_4.png';
   static const String introImage5 = 'assets/images/intro_image_5.png';
   static const String hadethDecorImage = 'assets/images/hadeth_decor.png';
-  static const String sebhaImage = 'assets/images/sebha.png';
+  static const String sebhaHeadImage = 'assets/images/sebha_head.png';
+  static const String sebhaBodyImage = 'assets/images/sebha_body.png';
   static const String radioDecor = 'assets/images/radio_player_decor.png';
   static const String soundWave = 'assets/images/sound_wave.png';
   static const String prayBg = 'assets/images/pray_bg.png';

@@ -5,6 +5,7 @@ import '../../../../utils/app_styles.dart';
 import '../../../../utils/screen_size.dart';
 
 class SebhaWidget extends StatelessWidget {
+  List<String> zekrList = [];
   VoidCallback opTap;
   double angle;
   String tasbehText;
@@ -20,35 +21,39 @@ class SebhaWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: GestureDetector(
-        onTap: opTap,
-        child: Padding(
-          padding: EdgeInsets.all(0),
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              Transform.rotate(
-                angle: angle,
-                child: Image.asset(AppAssets.sebhaImage),
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                spacing: context.height * 0.04,
-                children: [
-                  // SizedBox(height: context.height * 0.09),
-                  Text(
-                    tasbehText,
-                    style: AppStyles.bold32White,
-                    textDirection: TextDirection.rtl,
-                    textAlign: TextAlign.center,
-                  ),
-                  Text('$counterText', style: AppStyles.bold32White),
-                ],
-              ),
-            ],
+    return Padding(
+      padding: EdgeInsets.all(0),
+      child: Stack(
+        alignment: Alignment.bottomCenter,
+        children: [
+          Image.asset(AppAssets.sebhaHeadImage),
+          GestureDetector(
+            onTap: opTap,
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                Transform.rotate(
+                  angle: angle,
+                  child: Image.asset(AppAssets.sebhaBodyImage),
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  spacing: context.height * 0.04,
+                  children: [
+                    // SizedBox(height: context.height * 0.09),
+                    Text(
+                      tasbehText,
+                      style: AppStyles.bold32White,
+                      textDirection: TextDirection.rtl,
+                      textAlign: TextAlign.center,
+                    ),
+                    Text('$counterText', style: AppStyles.bold32White),
+                  ],
+                ),
+              ],
+            ),
           ),
-        ),
+        ],
       ),
     );
   }
