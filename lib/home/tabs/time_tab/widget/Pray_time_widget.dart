@@ -4,17 +4,9 @@ import 'package:islami1/utils/app_colors.dart';
 import 'package:islami1/utils/app_styles.dart';
 
 class PrayTimeWidget extends StatelessWidget {
-  final int index;
+  final Pray pray;
 
-  PrayTimeWidget({super.key, required this.index});
-
-  final List<Pray> prayList = [
-    Pray(name: 'Sunrise', time: '01:04', timePeriod: 'PM'),
-    Pray(name: 'Dhuhr', time: '01:01', timePeriod: 'PM'),
-    Pray(name: 'ASR', time: '04:38', timePeriod: 'PM'),
-    Pray(name: 'Maghrib', time: '07:57', timePeriod: 'PM'),
-    Pray(name: 'Isha', time: '09:57', timePeriod: 'PM'),
-  ];
+  const PrayTimeWidget({super.key, required this.pray});
 
   @override
   Widget build(BuildContext context) {
@@ -33,14 +25,11 @@ class PrayTimeWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           textBuilder(
-            prayList[index].name,
+            pray.name,
             AppStyles.bold14Black.copyWith(color: AppColors.whiteColor),
           ),
-          textBuilder(
-            prayList[index].time,
-            AppStyles.bold20White.copyWith(fontSize: 25),
-          ),
-          textBuilder(prayList[index].timePeriod, AppStyles.bold16White),
+          textBuilder(pray.time, AppStyles.bold20White.copyWith(fontSize: 25)),
+          textBuilder(pray.timePeriod, AppStyles.bold16White),
         ],
       ),
     );

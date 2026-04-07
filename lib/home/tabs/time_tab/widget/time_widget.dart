@@ -1,17 +1,81 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:intl/intl.dart';
+import 'package:islami1/model/pray_timings_response.dart';
 
 import '../../../../utils/app_assets.dart';
 import '../../../../utils/app_colors.dart';
 import '../../../../utils/app_styles.dart';
 import '../../../../utils/screen_size.dart';
+import '../model/pray.dart';
 import 'Pray_time_widget.dart';
 
 class TimeWidget extends StatelessWidget {
-  const TimeWidget({super.key});
+  final Data praysData;
+
+  const TimeWidget({super.key, required this.praysData});
+
   @override
   Widget build(BuildContext context) {
+    late List<Pray> prayList = [
+      Pray(
+        name: 'Fajr',
+        time: formatTo12Hour(praysData.timings!.fajr!),
+        timePeriod: getAmPm(praysData.timings!.fajr!),
+      ),
+      Pray(
+        name: 'Sunrise',
+        time: formatTo12Hour(praysData.timings!.sunrise!),
+        timePeriod: getAmPm(praysData.timings!.sunrise!),
+      ),
+      Pray(
+        name: 'Dhuhr',
+        time: formatTo12Hour(praysData.timings!.dhuhr!),
+        timePeriod: getAmPm(praysData.timings!.dhuhr!),
+      ),
+      Pray(
+        name: 'Asr',
+        time: formatTo12Hour(praysData.timings!.asr!),
+        timePeriod: getAmPm(praysData.timings!.asr!),
+      ),
+      Pray(
+        name: 'Sunset',
+        time: formatTo12Hour(praysData.timings!.sunset!),
+        timePeriod: getAmPm(praysData.timings!.sunset!),
+      ),
+      Pray(
+        name: 'Maghrib',
+        time: formatTo12Hour(praysData.timings!.maghrib!),
+        timePeriod: getAmPm(praysData.timings!.maghrib!),
+      ),
+      Pray(
+        name: 'Isha',
+        time: formatTo12Hour(praysData.timings!.isha!),
+        timePeriod: getAmPm(praysData.timings!.isha!),
+      ),
+      Pray(
+        name: 'First third',
+        time: formatTo12Hour(praysData.timings!.firstthird!),
+        timePeriod: getAmPm(praysData.timings!.firstthird!),
+      ),
+      Pray(
+        name: 'Midnight',
+        time: formatTo12Hour(praysData.timings!.midnight!),
+        timePeriod: getAmPm(praysData.timings!.midnight!),
+      ),
+      Pray(
+        name: 'Last third',
+        time: formatTo12Hour(praysData.timings!.lastthird!),
+        timePeriod: getAmPm(praysData.timings!.lastthird!),
+      ),
+      Pray(
+        name: 'Imsak',
+        time: formatTo12Hour(praysData.timings!.imsak!),
+        timePeriod: getAmPm(praysData.timings!.imsak!),
+      ),
+    ];
+
     return SizedBox(
       height: context.height * 0.4,
 
@@ -39,32 +103,44 @@ class TimeWidget extends StatelessWidget {
 
               /// header ============================================================
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
 
                 children: [
-                  Text('16 Jul,\n2024', style: AppStyles.bold16White),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Pray Time',
-                        style: AppStyles.bold20Black.copyWith(
-                          color: AppColors.black70Color,
-                        ),
-                      ),
-                      Text(
-                        'Tuesday',
-                        style: AppStyles.bold20Black.copyWith(
-                          color: AppColors.black90Color,
-                        ),
-                      ),
-                    ],
+                  Expanded(
+                    child: Text(
+                      praysData.date?.readable ?? '',
+                      style: AppStyles.bold16White,
+                    ),
                   ),
-                  Text(
-                    '09 Muh,\n1446',
-                    style: AppStyles.bold16White,
-                    textAlign: TextAlign.end,
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            'Pray Time',
+                            style: AppStyles.bold20Black.copyWith(
+                              color: AppColors.black70Color,
+                            ),
+                          ),
+                        ),
+                        Text(
+                          praysData.date?.gregorian?.weekday?.en ?? '',
+                          style: AppStyles.bold20Black.copyWith(
+                            color: AppColors.black90Color,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    child: Text(
+                      hijriData(),
+                      style: AppStyles.bold16White,
+                      textAlign: TextAlign.end,
+                    ),
                   ),
                 ],
               ),
@@ -82,9 +158,9 @@ class TimeWidget extends StatelessWidget {
                   enableInfiniteScroll: true,
                   enlargeFactor: .30,
                 ),
-                items: List.generate(5, (index) => index).map((index) {
-                  return PrayTimeWidget(index: index);
-                }).toList(),
+                items: prayList
+                    .map((pray) => PrayTimeWidget(pray: pray))
+                    .toList(),
               ),
             ),
 
@@ -107,7 +183,7 @@ class TimeWidget extends StatelessWidget {
                           color: AppColors.black70Color,
                         ),
                       ),
-                      Text(' - 02:32', style: AppStyles.bold16Black),
+                      Text(' - 02:08', style: AppStyles.bold16Black),
                     ],
                   ),
                   iconBuilder(AppColors.blackColor),
@@ -133,4 +209,45 @@ class TimeWidget extends StatelessWidget {
       ),
     );
   }
+
+  String hijriData() {
+    return '${praysData.date?.hijri?.month?.number} ${praysData.date?.hijri?.month?.en?.substring(0, 3)} ${praysData.date?.hijri?.year}';
+  }
+
+  String formatTo12Hour(String time24) {
+    final inputFormat = DateFormat("HH:mm");
+    final outputFormat = DateFormat("hh:mm");
+
+    final dateTime = inputFormat.parse(time24);
+    return outputFormat.format(dateTime);
+  }
+
+  String getAmPm(String time24) {
+    final inputFormat = DateFormat("HH:mm");
+    final outputFormat = DateFormat("a");
+
+    final dateTime = inputFormat.parse(time24);
+    return outputFormat.format(dateTime);
+  }
+
+  // String getNextPray() {
+  //   for (var element in prayList) {
+  //     final timeParts = element.time.split(':');
+  //
+  //     final prayDateTime = DateTime(
+  //       DateTime.now().year,
+  //       DateTime.now().month,
+  //       DateTime.now().day,
+  //       int.parse(timeParts[0]),
+  //       int.parse(timeParts[1]),
+  //     );
+  //
+  //     if (prayDateTime.isAfter(DateTime.now())) {
+  //       debugPrint(element.time);
+  //       return element.time;
+  //     }
+  //   }
+  //   debugPrint('no time');
+  //   return '';
+  // }
 }

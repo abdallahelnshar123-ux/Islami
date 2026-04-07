@@ -5,18 +5,20 @@ import '../../../../utils/app_styles.dart';
 import '../../../../utils/screen_size.dart';
 
 class SebhaWidget extends StatelessWidget {
-  List<String> zekrList = [];
+  List<String> zekrList;
   VoidCallback opTap;
   double angle;
-  String tasbehText;
-  int counterText;
+  int index;
+  int counter;
 
   SebhaWidget({
     super.key,
-    required this.counterText,
+    required this.counter,
     required this.angle,
     required this.opTap,
-    required this.tasbehText,
+    required this.index,
+    required this.zekrList
+
   });
 
   @override
@@ -42,12 +44,12 @@ class SebhaWidget extends StatelessWidget {
                   children: [
                     // SizedBox(height: context.height * 0.09),
                     Text(
-                      tasbehText,
+                      zekrList[index],
                       style: AppStyles.bold32White,
                       textDirection: TextDirection.rtl,
                       textAlign: TextAlign.center,
                     ),
-                    Text('$counterText', style: AppStyles.bold32White),
+                    Text('$counter', style: AppStyles.bold32White),
                   ],
                 ),
               ],

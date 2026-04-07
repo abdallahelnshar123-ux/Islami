@@ -87,8 +87,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
               ),
               onPressed: () {
                 style = 1;
-                // style1 = true;
-                // style2 = false;
+
                 setState(() {});
               },
               child: Text(
@@ -114,8 +113,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
               ),
               onPressed: () {
                 style = 2;
-                // style1 = false;
-                // style2 = true;
+
                 setState(() {});
               },
               child: Text(

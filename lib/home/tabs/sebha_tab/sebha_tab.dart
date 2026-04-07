@@ -1,20 +1,24 @@
-import 'dart:math' as math;
-
 import 'package:flutter/material.dart';
 import 'package:islami1/home/tabs/sebha_tab/widget/sebha_widget.dart';
 import 'package:islami1/utils/app_styles.dart';
 
 class SebhaTab extends StatefulWidget {
-  SebhaTab({super.key});
+  const SebhaTab({super.key});
 
   @override
   State<SebhaTab> createState() => _SebhaTabState();
 }
 
 class _SebhaTabState extends State<SebhaTab> {
+  List<String> zekrList = [
+    'سبحان الله',
+    'الحمد لله',
+    'الله أكبر',
+
+  ];
   int counter = 0;
-  int counterText = 0;
-  String tasbehText = 'سبحان الله';
+  int index = 0;
+
   double angle = 0;
 
   @override
@@ -32,39 +36,26 @@ class _SebhaTabState extends State<SebhaTab> {
         ),
         SizedBox(height: 30),
         SebhaWidget(
-          counterText: counterText,
+          index: index,
+          counter: counter,
           angle: angle,
           opTap: rotateImage,
-          tasbehText: tasbehText,
+          zekrList: zekrList,
+
         ),
       ],
     );
   }
 
   void rotateImage() {
-    if (counterText <= 32) {
-      counterText++;
-      angle += 10.9090909091 * math.pi / 180;
-    } else {
-      counterText = 0;
-      counter++;
-      angle = 0;
-    }
-
-    switch (counter) {
-      case 1:
-        tasbehText = 'سبحان الله';
-        break;
-      case 2:
-        tasbehText = 'الحمد لله';
-        break;
-      case 3:
-        tasbehText = 'الله أكبر';
-        break;
-      default:
-        counter = 1;
-        tasbehText = 'سبحان الله';
-        break;
+    counter++;
+    angle += 20;
+    if (counter % 34 == 0) {
+      index++;
+      counter = 0;
+      if (index == zekrList.length) {
+        index = 0;
+      }
     }
     setState(() {});
   }

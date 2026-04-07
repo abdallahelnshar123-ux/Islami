@@ -9,7 +9,6 @@ class MostRecentProvider extends ChangeNotifier {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     List<String> tempMostRecentList =
         prefs.getStringList(SharedPrefsKeys.mostRecentKey) ?? [];
-    debugPrint('get');
     mostRecentList = tempMostRecentList
         .map((element) => int.parse(element))
         .toList();
