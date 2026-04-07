@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:islami1/home/tabs/radio_tab/audio_utils.dart';
 import 'package:islami1/home/tabs/radio_tab/widget/player_button.dart';
+import 'package:islami1/model/radio_response.dart';
 
 import '../../../../utils/app_assets.dart';
 import '../../../../utils/app_colors.dart';
@@ -7,7 +9,9 @@ import '../../../../utils/app_styles.dart';
 import '../../../../utils/screen_size.dart';
 
 class PlayerWidget extends StatefulWidget {
-  const PlayerWidget({super.key});
+  final Radios radio;
+
+  const PlayerWidget({super.key, required this.radio});
 
   @override
   State<PlayerWidget> createState() => _PlayerWidgetState();
@@ -35,7 +39,13 @@ class _PlayerWidgetState extends State<PlayerWidget> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text('Ibrahim Al-Akdar', style: AppStyles.bold20Black),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              widget.radio.name ?? 'No title',
+              style: AppStyles.bold20Black,
+            ),
+          ),
           Row(
             spacing: context.width * 0.03,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -46,7 +56,14 @@ class _PlayerWidgetState extends State<PlayerWidget> {
               /// play/pause button ===========================================
               PlayerButton(
                 onPressed: () {
-                  play = !play;
+                  if (AudioUtils.player.playing) {
+                    AudioUtils.stopRadio();
+                    play = false;
+                  } else {
+                    AudioUtils.playRadio(widget.radio.url ?? '');
+                    play = true;
+                  }
+
                   setState(() {});
                 },
                 icon: play ? AppAssets.iconPause : AppAssets.iconPlay,
@@ -55,6 +72,11 @@ class _PlayerWidgetState extends State<PlayerWidget> {
               /// volume button ===========================================
               PlayerButton(
                 onPressed: () {
+                  if (volumeOn) {
+                    AudioUtils.player.setVolume(0.0);
+                  } else {
+                    AudioUtils.player.setVolume(1.0);
+                  }
                   volumeOn = !volumeOn;
                   setState(() {});
                 },
