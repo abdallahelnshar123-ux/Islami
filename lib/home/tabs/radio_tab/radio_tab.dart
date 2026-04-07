@@ -77,8 +77,39 @@ class _RadioTabState extends State<RadioTab> {
                       return PlayersList(radiosList: radiosList !,);
                     },
                   ),
+                  FutureBuilder<RadioResponse>(
+                    future: ApiManager.getRadios(),
+                    builder: (context, snapshot) {
+                      if (snapshot.connectionState == ConnectionState.waiting) {
+                        return MainLoadingWidget();
+                      }
+                      if (snapshot.hasError) {
+                        return MainErrorWidget(
+                          onPressed: () {
+                            ApiManager.getRadios();
+                            setState(() {});
+                          },
+                          errorMessage: 'Something went Wrong ',
+                        );
+                      }
+                      if (snapshot.connectionState == ConnectionState.done) {
+                        if (
+                        snapshot.data?.radios == null) {
+                          return MainErrorWidget(
+                            onPressed: () {
+                              ApiManager.getRadios();
+                              setState(() {});
+                            },
+                            errorMessage: 'Some thing went wrong',
+                          );
+                        }
+                      }
+                      var radiosList = snapshot.data!.radios;
+                      return PlayersList(radiosList: radiosList !,);
+                    },
+                  ),
 
-                  PlayersList(radiosList: [],),
+
                 ],
               ),
             ),
