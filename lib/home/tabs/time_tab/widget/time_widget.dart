@@ -126,10 +126,13 @@ class TimeWidget extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Text(
-                          praysData.date?.gregorian?.weekday?.en ?? '',
-                          style: AppStyles.bold20Black.copyWith(
-                            color: AppColors.black90Color,
+                        FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            praysData.date?.gregorian?.weekday?.en ?? '',
+                            style: AppStyles.bold20Black.copyWith(
+                              color: AppColors.black90Color,
+                            ),
                           ),
                         ),
                       ],
