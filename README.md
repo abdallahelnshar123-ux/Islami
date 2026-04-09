@@ -38,12 +38,16 @@
 
 ![Splash Screen](assets/screenshots/splash.png)  
 ![Home Tab](assets/screenshots/home.png)  
-![Surah Detail](assets/screenshots/surah_detail.png)  
-![Hadith Screen](assets/screenshots/hadith.png)  
-![Tasbeeh Screen](assets/screenshots/tasbeeh.png)  
-![Radio Screen](assets/screenshots/radio.png)  
+![Surah 1](assets/screenshots/surah1.png)  
+![Surah 2](assets/screenshots/surah2.png)  
+![Surah 3](assets/screenshots/surah3.png)  
+![Surah 4](assets/screenshots/surah4.png)  
+![Hadith 1](assets/screenshots/hadith1.png)  
+![Hadith 2](assets/screenshots/hadith2.png)  
+![Tasbeeh](assets/screenshots/tasbeeh.png)  
+![Radio](assets/screenshots/radio.png)  
 ![Time Tab](assets/screenshots/time_tab.png)  
-![Adhkar Screen](assets/screenshots/adhkar.png)  
+![Azkar](assets/screenshots/adhkar.png)  
 
 ---
 
@@ -74,12 +78,11 @@ flutter pub get
 flutter run
 ```
 
----
+## 👨‍💻 Author & License
 
-## 👨‍💻 Author
+**Abdallah Samir Elnshar**
 
-**Abdallah Samir Elnshar**  
+This app is part of a series of projects developed during my journey at **Route Academy**.  
+Thank you for checking out my work! 🙏
 
-This app is part of a series of projects developed during my journey at **Route Academy**.
-
-Thank you for checking out my work!
+This project is open source and available under the **MIT License**.  
