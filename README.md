@@ -36,18 +36,25 @@
 
 > Replace the URLs with your actual screenshots in your repository
 
-![Splash Screen](assets/screenshots/splash.png)  
-![Home Tab](assets/screenshots/home.png)  
-![Surah 1](assets/screenshots/surah1.png)  
-![Surah 2](assets/screenshots/surah2.png)  
-![Surah 3](assets/screenshots/surah3.png)  
-![Surah 4](assets/screenshots/surah4.png)  
-![Hadith 1](assets/screenshots/hadith1.png)  
-![Hadith 2](assets/screenshots/hadith2.png)  
-![Tasbeeh](assets/screenshots/tasbeeh.png)  
-![Radio](assets/screenshots/radio.png)  
-![Time Tab](assets/screenshots/time_tab.png)  
-![Azkar](assets/screenshots/adhkar.png)  
+![Splash Screen](assets/screenshots/splash.jpeg)  
+![Home Tab](assets/screenshots/on_boading_1.jpeg)  
+![Surah 1](assets/screenshots/on_boading_2.jpeg)  
+![Surah 2](assets/screenshots/on_boading_3.jpeg)  
+![Surah 3](assets/screenshots/on_boading_4.jpeg)  
+![Surah 4](assets/screenshots/on_boading_5.jpeg)  
+![Hadith 1](assets/screenshots/home_tab.jpeg)  
+![Sura Details 1](assets/screenshots/sura_details_1.jpeg)  
+![Sura Details 2](assets/screenshots/sura_details_2.jpeg)  
+![Hadith Tab](assets/screenshots/hadith_tab.jpeg)  
+![Hadith Details](assets/screenshots/hadith_details.jpeg)  
+![Sebha Tab](assets/screenshots/sebha_tab.jpeg)  
+![Radio Tab](assets/screenshots/radio_tab.jpeg)  
+![Time Tab](assets/screenshots/time_tab.jpeg)  
+![Azkar1](assets/screenshots/azkar1.jpeg)  
+![Azkar2](assets/screenshots/azkar2.jpeg)  
+![Azkar3](assets/screenshots/azkar3.jpeg)  
+![Azkar4](assets/screenshots/azkar4.jpeg)  
+
 
 ---
 
