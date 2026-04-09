@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:islami1/model/pray_timings_response.dart';
 import 'package:islami1/model/radio_response.dart';
-import 'package:islami1/model/reciters_response.dart';
 
 class ApiManager {
   /*
@@ -30,9 +29,7 @@ class ApiManager {
    */
 
   static Future<RadioResponse> getRadios() async {
-    Uri url = Uri.https('mp3quran.net', '/api/v3/radios', {
-      'language': 'ar',
-    });
+    Uri url = Uri.https('mp3quran.net', '/api/v3/radios', {'language': 'ar'});
     try {
       var response = await http.get(url);
       var responseBody = response.body;
@@ -43,21 +40,21 @@ class ApiManager {
     }
   }
 
-  /*
-  https://www.mp3quran.net/api/v3/reciters?language=ar
-   */
-
-  static Future<RecitersResponse> getReciters() async {
-    Uri url = Uri.https('www.mp3quran.net', '/api/v3/reciters', {
-      'language': 'ar',
-    });
-    try {
-      var response = await http.get(url);
-      var responseBody = response.body;
-      var json = jsonDecode(responseBody);
-      return RecitersResponse.fromJson(json);
-    } catch (e) {
-      rethrow;
-    }
-  }
+  // /*
+  // https://www.mp3quran.net/api/v3/reciters?language=ar
+  //  */
+  //
+  // static Future<RecitersResponse> getReciters() async {
+  //   Uri url = Uri.https('www.mp3quran.net', '/api/v3/reciters', {
+  //     'language': 'ar',
+  //   });
+  //   try {
+  //     var response = await http.get(url);
+  //     var responseBody = response.body;
+  //     var json = jsonDecode(responseBody);
+  //     return RecitersResponse.fromJson(json);
+  //   } catch (e) {
+  //     rethrow;
+  //   }
+  // }
 }

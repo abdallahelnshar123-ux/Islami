@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:islami1/api/api_manager.dart';
+import 'package:islami1/azkar_screen/azkar_screen.dart';
 import 'package:islami1/home/tabs/time_tab/widget/azkar_widget.dart';
 import 'package:islami1/home/tabs/time_tab/widget/time_widget.dart';
 import 'package:islami1/model/pray_timings_response.dart';
@@ -71,10 +72,28 @@ class _TimeTabState extends State<TimeTab> {
                 spacing: context.width * 0.048,
                 children: [
                   AzkarWidget(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              AzkarScreen(azkarName: 'evening_azkar'),
+                        ),
+                      );
+                    },
                     image: AppAssets.eveningAzkarImg,
                     text: 'Evening Azkar',
                   ),
                   AzkarWidget(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              AzkarScreen(azkarName: "morning_azkar"),
+                        ),
+                      );
+                    },
                     image: AppAssets.morningAzkarImg,
                     text: 'Morning Azkar',
                   ),
@@ -84,10 +103,28 @@ class _TimeTabState extends State<TimeTab> {
                 spacing: context.width * 0.048,
                 children: [
                   AzkarWidget(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              AzkarScreen(azkarName: "waking_azkar"),
+                        ),
+                      );
+                    },
                     image: AppAssets.wakingAzkarImg,
                     text: 'Waking Azkar',
                   ),
                   AzkarWidget(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              AzkarScreen(azkarName: "sleeping_azkar"),
+                        ),
+                      );
+                    },
                     image: AppAssets.sleepingAzkarImg,
                     text: 'Sleeping Azkar',
                   ),

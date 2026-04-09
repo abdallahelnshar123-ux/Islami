@@ -214,7 +214,7 @@ class TimeWidget extends StatelessWidget {
   }
 
   String hijriData() {
-    return '${praysData.date?.hijri?.month?.number} ${praysData.date?.hijri?.month?.en?.substring(0, 3)} ${praysData.date?.hijri?.year}';
+    return '${praysData.date?.hijri?.day} ${praysData.date?.hijri?.month?.en?.substring(0, 3)} ${praysData.date?.hijri?.year}';
   }
 
   String formatTo12Hour(String time24) {

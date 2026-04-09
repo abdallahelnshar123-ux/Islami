@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami1/home/tabs/radio_tab/audio_utils.dart';
 import 'package:islami1/home/tabs/radio_tab/widget/players_list.dart';
 import 'package:islami1/model/radio_response.dart';
 import 'package:islami1/utils/app_colors.dart';
@@ -16,6 +17,13 @@ class RadioTab extends StatefulWidget {
 }
 
 class _RadioTabState extends State<RadioTab> {
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    AudioUtils.stopRadio();
+  }
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
