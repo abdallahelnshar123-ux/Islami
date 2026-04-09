@@ -1,6 +1,6 @@
 # 🌙 Islami
 
-**Islami** is a beautiful and user-friendly Flutter app that helps you explore the Holy Quran, Hadith, daily Adhkar, prayer times, and Islamic radio channels, all in one place. Perfect for anyone looking to strengthen their Islamic knowledge and daily practice. 📖✨
+**Islami** is a user-friendly Flutter app that helps you explore the Holy Quran, Hadith, daily Azkar, prayer times, and Islamic radio channels, all in one place. Perfect for anyone looking to strengthen their Islamic knowledge and daily practice. 📖✨
 
 ---
 
@@ -9,17 +9,18 @@
 - **Splash Screen & Home Tab**  
   - Displays all **114 Surahs** of the Quran  
   - Search Surahs by name 🔍  
-  - Recent tab shows the last **6 Surahs** viewed
+  - Recent section shows the last **6 Surahs** viewed
 
 - **Surah Details Screen**  
   - View Surah content in **two different layouts**  
   - Switch between layouts easily 🔄
 
 - **Hadith Screen**  
-  - Read full Hadith content in a dedicated screen 🕌
+  - Browse multiple Hadiths using a **slider** 📜  
+  - Each Hadith shows a **partial preview**, tap to view the **full content** on a separate screen
 
 - **Tasbeeh Screen**  
-  - Count each Dhikr up to **33**  
+  - Count each Zikr up to **33**  
   - Automatically moves to the next Dhikr after 33 🔢
 
 - **Radio Screen**  
@@ -27,8 +28,7 @@
 
 - **Time Tab**  
   - **Prayer times** + Hijri & Gregorian date (fetched from API) ⏰  
-  - Daily **Adhkar** (Morning, Evening, Wake up, Sleep) loaded locally  
-  - Tap each Adhkar to view full content in a separate screen
+  - Daily **Azkar** (Morning, Evening, Wake up, Sleep) loaded locally  
 
 ---
 
@@ -65,10 +65,10 @@
 
 ## 🛠 Installation & Run
 
-Clone the repository, install dependencies, and run the app all in one go:
+Clone the repository, install dependencies, and run the app:
 
 ```bash
-git clone [<your-repo-url>](https://github.com/abdallahelnshar123-ux/Islami.git)
-cd islami
+git clone https://github.com/abdallahelnshar123-ux/Islami.git
+cd Islami
 flutter pub get
 flutter run
