@@ -34,26 +34,38 @@
 
 ## 📸 Screenshots
 
-> Replace the URLs with your actual screenshots in your repository
-
-<img src="assets/screenshots/splash.jpeg" alt="Splash Screen" width="200"/>
-<img src="assets/screenshots/on_boading_1.jpeg" alt="Home Tab" width="200"/>
-<img src="assets/screenshots/on_boading_2.jpeg" alt="Surah 1" width="200"/>
-<img src="assets/screenshots/on_boading_3.jpeg" alt="Surah 2" width="200"/>
-<img src="assets/screenshots/on_boading_4.jpeg" alt="Surah 3" width="200"/>
-<img src="assets/screenshots/on_boading_5.jpeg" alt="Surah 4" width="200"/>
-<img src="assets/screenshots/home_tab.jpeg" alt="Hadith 1" width="200"/>
-<img src="assets/screenshots/sura_details_1.jpeg" alt="Sura Details 1" width="200"/>
-<img src="assets/screenshots/sura_details_2.jpeg" alt="Sura Details 2" width="200"/>
-<img src="assets/screenshots/hadith_tab.jpeg" alt="Hadith Tab" width="200"/>
-<img src="assets/screenshots/hadith_details.jpeg" alt="Hadith Details" width="200"/>
-<img src="assets/screenshots/sebha_tab.jpeg" alt="Sebha Tab" width="200"/>
-<img src="assets/screenshots/radio_tab.jpeg" alt="Radio Tab" width="200"/>
-<img src="assets/screenshots/time_tab.jpeg" alt="Time Tab" width="200"/>
-<img src="assets/screenshots/azkar1.jpeg" alt="Azkar1" width="200"/>
-<img src="assets/screenshots/azkar2.jpeg" alt="Azkar2" width="200"/>
-<img src="assets/screenshots/azkar3.jpeg" alt="Azkar3" width="200"/>
-<img src="assets/screenshots/azkar4.jpeg" alt="Azkar4" width="200"/>
+<table>
+  <tr>
+    <td><img src="assets/screenshots/splash.jpeg" alt="Splash" width="200"/></td>
+    <td><img src="assets/screenshots/on_boading_1.jpeg" alt="Home Tab" width="200"/></td>
+    <td><img src="assets/screenshots/on_boading_2.jpeg" alt="Surah 1" width="200"/></td>
+  </tr>
+  <tr>
+    <td><img src="assets/screenshots/on_boading_3.jpeg" alt="Surah 2" width="200"/></td>
+    <td><img src="assets/screenshots/on_boading_4.jpeg" alt="Surah 3" width="200"/></td>
+    <td><img src="assets/screenshots/on_boading_5.jpeg" alt="Surah 4" width="200"/></td>
+  </tr>
+  <tr>
+    <td><img src="assets/screenshots/home_tab.jpeg" alt="Hadith 1" width="200"/></td>
+    <td><img src="assets/screenshots/sura_details_1.jpeg" alt="Sura Details 1" width="200"/></td>
+    <td><img src="assets/screenshots/sura_details_2.jpeg" alt="Sura Details 2" width="200"/></td>
+  </tr>
+  <tr>
+    <td><img src="assets/screenshots/hadith_tab.jpeg" alt="Hadith Tab" width="200"/></td>
+    <td><img src="assets/screenshots/hadith_details.jpeg" alt="Hadith Details" width="200"/></td>
+    <td><img src="assets/screenshots/sebha_tab.jpeg" alt="Sebha Tab" width="200"/></td>
+  </tr>
+  <tr>
+    <td><img src="assets/screenshots/radio_tab.jpeg" alt="Radio Tab" width="200"/></td>
+    <td><img src="assets/screenshots/time_tab.jpeg" alt="Time Tab" width="200"/></td>
+    <td><img src="assets/screenshots/azkar1.jpeg" alt="Azkar1" width="200"/></td>
+  </tr>
+  <tr>
+    <td><img src="assets/screenshots/azkar2.jpeg" alt="Azkar2" width="200"/></td>
+    <td><img src="assets/screenshots/azkar3.jpeg" alt="Azkar3" width="200"/></td>
+    <td><img src="assets/screenshots/azkar4.jpeg" alt="Azkar4" width="200"/></td>
+  </tr>
+</table>
 
 ---
 
