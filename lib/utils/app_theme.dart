@@ -1,0 +1,38 @@
+import 'package:flutter/material.dart';
+import 'package:islami1/utils/app_colors.dart';
+import 'package:islami1/utils/app_styles.dart';
+
+class AppTheme {
+  static final ThemeData darkTheme = ThemeData(
+    tabBarTheme: TabBarThemeData(
+      labelStyle: AppStyles.bold14Black,
+      indicatorSize: TabBarIndicatorSize.tab,
+      indicatorColor: AppColors.primaryColor,
+      dividerColor: Colors.red,
+      dividerHeight: 0,
+      unselectedLabelColor: AppColors.whiteColor,
+      labelColor: AppColors.blackColor,
+      indicator: BoxDecoration(
+        color: AppColors.primaryColor,
+        borderRadius: BorderRadius.circular(12),
+      ),
+      overlayColor: WidgetStateProperty.all(AppColors.transparentColor),
+    ),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      selectedItemColor: AppColors.whiteColor,
+      unselectedItemColor: AppColors.blackColor,
+      // type: BottomNavigationBarType.fixed,
+      // backgroundColor: AppColors.primaryColor,
+    ),
+    scaffoldBackgroundColor: AppColors.transparentColor,
+    appBarTheme: AppBarTheme(
+      surfaceTintColor: AppColors.blackColor,
+      backgroundColor: AppColors.blackColor,
+      centerTitle: true,
+      titleTextStyle: AppStyles.bold20Primary,
+      toolbarHeight: 89,
+
+      iconTheme: IconThemeData(color: AppColors.primaryColor),
+    ),
+  );
+}
