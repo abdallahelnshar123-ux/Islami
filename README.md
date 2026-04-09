@@ -1,5 +1,7 @@
 # 🌙 Islami
 
+![Cover](assets/screenshots/islami_cover.png)
+
 **Islami** is a user-friendly Flutter app that helps you explore the Holy Quran, Hadith, daily Azkar, prayer times, and Islamic radio channels, all in one place. Perfect for anyone looking to strengthen their Islamic knowledge and daily practice. 📖✨
 
 ---
