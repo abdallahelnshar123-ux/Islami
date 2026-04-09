@@ -62,14 +62,6 @@
 - `rename: ^3.1.0`  
 
 ---
-## 👨‍💻 Author
-
-**Abdallah Samir Elnshar**  
-
-This app is part of a series of projects developed during my journey at **Route Academy**.
-
-Thank you for checking out my work!
----
 
 ## 🛠 Installation & Run
 
@@ -80,3 +72,13 @@ git clone https://github.com/abdallahelnshar123-ux/Islami.git
 cd Islami
 flutter pub get
 flutter run
+```
+
+---
+
+## 👨‍💻 Author
+
+**Abdallah Samir Elnshar**  
+
+This app is part of a series of projects developed during my journey at **Route Academy**.
+Thank you for checking out my work!
