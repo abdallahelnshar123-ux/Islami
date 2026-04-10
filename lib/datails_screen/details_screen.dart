@@ -13,7 +13,7 @@ import '../home/tabs/quran_tab/model/quran_resources.dart';
 import '../utils/provider.dart';
 
 class DetailsScreen extends StatefulWidget {
-  DetailsScreen({super.key});
+  const DetailsScreen({super.key});
 
   @override
   State<DetailsScreen> createState() => _DetailsScreenState();
@@ -25,8 +25,6 @@ class _DetailsScreenState extends State<DetailsScreen> {
   List<String> suraVerses = [];
   int style = 1;
 
-  // bool style1 = true;
-  // bool style2 = false;
   int selectedIndex = -1;
   Hadeth? hadeth;
   late int hadethIndex;
@@ -34,7 +32,6 @@ class _DetailsScreenState extends State<DetailsScreen> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     mostRecentProvider.getMostRecentIndex();
   }

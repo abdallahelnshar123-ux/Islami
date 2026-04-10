@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPrefsKeys {
@@ -16,5 +15,4 @@ void saveLastSuraIndex(int newSuraIndex) async {
   mostRecentList.insert(0, '$newSuraIndex');
   if (mostRecentList.length > 5) mostRecentList.removeLast();
   await prefs.setStringList(SharedPrefsKeys.mostRecentKey, mostRecentList);
-  debugPrint('set');
 }
