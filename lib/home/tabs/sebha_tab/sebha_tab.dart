@@ -10,12 +10,7 @@ class SebhaTab extends StatefulWidget {
 }
 
 class _SebhaTabState extends State<SebhaTab> {
-  List<String> zekrList = [
-    'سبحان الله',
-    'الحمد لله',
-    'الله أكبر',
-
-  ];
+  List<String> zekrList = ['سبحان الله', 'الحمد لله', 'الله أكبر'];
   int counter = 0;
   int index = 0;
 
@@ -24,7 +19,6 @@ class _SebhaTabState extends State<SebhaTab> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      // spacing: context.height*0.05,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         SizedBox(height: 7),
@@ -41,7 +35,6 @@ class _SebhaTabState extends State<SebhaTab> {
           angle: angle,
           opTap: rotateImage,
           zekrList: zekrList,
-
         ),
       ],
     );

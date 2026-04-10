@@ -26,13 +26,13 @@ class _IntroScreenState extends State<IntroScreen> {
         builtPageView(
           AppAssets.introImage1,
           context,
-          'Welcome To Islmi App',
+          'Welcome To Islami App',
           '',
         ),
         builtPageView(
           AppAssets.introImage2,
           context,
-          'Welcome To Islmi ',
+          'Welcome To Islami ',
           'We Are Very Excited To Have You In Our Community',
         ),
         builtPageView(
